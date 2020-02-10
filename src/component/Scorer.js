@@ -14,13 +14,15 @@ export default class Scorer extends React.Component {
     }
 
     isPropsChanged = prevProps => {
-        return prevProps.player1Score !== this.props.player1Score;
+        return prevProps.player1Score !== this.props.player1Score || prevProps.player2Score !== this.props.player2Score;
     }
 
     calculateScore = () => {
-        const { player1Score } = this.props;
+        const { player1Score, player2Score } = this.props;
 
-        if (player1Score <= Constants.FORTY)
+        if (player1Score === 0 && player2Score === 1)
+            return Constants.PLAYER2_SCORED_ONCE;
+        if (player1Score <= Constants.FORTY && player2Score === 0)
             return Constants.TENNIS_SCORE[player1Score] + Constants.COMMA_LOVE;
     }
 
@@ -35,5 +37,6 @@ export default class Scorer extends React.Component {
 }
 
 Scorer.propTypes = {
-    player1Score: PropTypes.number.isRequired
+    player1Score: PropTypes.number.isRequired,
+    player2Score: PropTypes.number.isRequired
 }

@@ -5,6 +5,7 @@ export const Constants = {
     PLAYER_BUTTON_TEXT: "Scored",
     INITIAL_SCORE: "Love all",
     TENNIS_SCORE: ["Love", "Fifteen", "Thirty", "Forty"],
+    PLAYER2_SCORED_ONCE: "Love,Fifteen",
     COMMA_LOVE: ",Love",
     FORTY: 3,
     SCORER_HEADER: "Score"
