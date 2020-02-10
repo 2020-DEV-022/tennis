@@ -5,7 +5,7 @@ import Scorer from '../component/Scorer';
 describe(("<Scorer/> component"), () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(< Scorer />);
+    wrapper = shallow(< Scorer player1Score={0} />);
   });
 
   it("should render correctly", () => {
