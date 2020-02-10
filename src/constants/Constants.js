@@ -7,6 +7,7 @@ export const Constants = {
     TENNIS_SCORE: ["Love", "Fifteen", "Thirty", "Forty"],
     PLAYER2_SCORED_ONCE: "Love,Fifteen",
     PLAYER2_SCORED_TWICE: "Love,Thirty",
+    PLAYER2_SCORED_THRICE: "Love,Forty",
     COMMA_LOVE: ",Love",
     FORTY: 3,
     SCORER_HEADER: "Score"
