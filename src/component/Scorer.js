@@ -18,6 +18,8 @@ export default class Scorer extends React.Component {
     }
 
     calculateScore = () => {
+        if (this.props.player1Score === 2)
+            return Constants.PLAYER1_SCORED_TWICE;
         if (this.props.player1Score === 1)
             return Constants.PLAYER1_SCORED_ONCE;
     }
