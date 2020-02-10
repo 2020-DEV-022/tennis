@@ -38,8 +38,13 @@ describe(("<TennisGame/> Game functionality"), () => {
   });
 
   it("On Player 1 Scores twice, Score Should be Thirty Love", () => {
-    player1ScoreButton.simulate('click');
-    player1ScoreButton.simulate('click');
+    playerPlays(player1ScoreButton, 2);
     expect(scoreLabel.text()).toEqual("Thirty,Love");
   });
 });
+
+function playerPlays(button, times) {
+  for (let index = 0; index < times; index++) {
+    button.simulate('click');
+  }
+}
