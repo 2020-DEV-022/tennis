@@ -4,8 +4,8 @@ export const Constants = {
     PLAYER2_NAME: "Player 2",
     PLAYER_BUTTON_TEXT: "Scored",
     INITIAL_SCORE: "Love all",
-    PLAYER1_SCORED_ONCE: "Fifteen,Love",
-    PLAYER1_SCORED_TWICE: "Thirty,Love",
-    PLAYER1_SCORED_THRICE: "Forty,Love",
+    TENNIS_SCORE: ["Love", "Fifteen", "Thirty", "Forty"],
+    COMMA_LOVE: ",Love",
+    FORTY: 3,
     SCORER_HEADER: "Score"
 };
