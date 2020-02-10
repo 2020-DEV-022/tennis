@@ -6,5 +6,6 @@ export const Constants = {
     INITIAL_SCORE: "Love all",
     PLAYER1_SCORED_ONCE: "Fifteen,Love",
     PLAYER1_SCORED_TWICE: "Thirty,Love",
+    PLAYER1_SCORED_THRICE: "Forty,Love",
     SCORER_HEADER: "Score"
 };
