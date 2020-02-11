@@ -11,5 +11,6 @@ export const Constants = {
     ALL: " all",
     DEUCE: "Deuce",
     PLAYER1_WIN: "Player 1 wins",
+    PLAYER2_WIN: "Player 2 wins",
     SCORER_HEADER: "Score"
 };

@@ -30,6 +30,8 @@ export default class Scorer extends React.Component {
             return this.getTennisScore();
         if (player1Score - player2Score > 1)
             return Constants.PLAYER1_WIN;
+        if (player2Score - player1Score > 1)
+            return Constants.PLAYER2_WIN;
     }
 
     getTennisScoreWhenBothScoredEqual = () => {
