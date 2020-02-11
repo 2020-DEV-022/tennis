@@ -18,10 +18,8 @@ export default class Scorer extends React.Component {
     }
 
     calculateScore = () => {
-        const { player1Score } = this.props;
-
         if (this.isBothScoredEqual()) {
-            if (player1Score >= Constants.FORTY)
+            if (this.isDeuce())
                 return Constants.DEUCE;
             return this.getTennisScoreWhenBothScoredEqual();
         }
@@ -29,6 +27,10 @@ export default class Scorer extends React.Component {
             return this.getTennisScore();
         if (this.hasWinner())
             return this.getWinnerScore();
+    }
+
+    isDeuce = () => {
+        return this.props.player1Score >= Constants.FORTY;
     }
 
     hasWinner = () => {
