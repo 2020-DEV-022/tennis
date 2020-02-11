@@ -10,7 +10,6 @@ export const Constants = {
     THIRTY: 2,
     ALL: " all",
     DEUCE: "Deuce",
-    PLAYER1_WIN: "Player 1 wins",
-    PLAYER2_WIN: "Player 2 wins",
+    WIN: " wins",
     SCORER_HEADER: "Score"
 };
