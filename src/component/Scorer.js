@@ -31,6 +31,7 @@ export default class Scorer extends React.Component {
             return this.getWinnerScore();
         if (player1Score > player2Score)
             return Constants.ADVANTAGE_PLAYER1;
+        return Constants.ADVANTAGE_PLAYER2;
     }
 
     isDeuce = () => {
