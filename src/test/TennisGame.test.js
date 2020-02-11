@@ -103,6 +103,12 @@ describe(("<TennisGame/> Game functionality"), () => {
     playerPlays(player2ScoreButton, 4);
     expect(scoreLabel.text()).toEqual("Deuce");
   });
+
+  it("On Player 1 Scores four times and Player 2 Scores three times, Score Should be Advantage Player 1", () => {
+    playerPlays(player1ScoreButton, 4);
+    playerPlays(player2ScoreButton, 3);
+    expect(scoreLabel.text()).toEqual("Advantage Player 1");
+  });
 });
 
 function playerPlays(button, times) {
