@@ -6,7 +6,7 @@ describe(("<Player/> component with props"), () => {
   let wrapper, updateScore;
   beforeEach(() => {
     updateScore = jest.fn();
-    wrapper = shallow(< Player name="Player 1" onUpdateScore={updateScore} />);
+    wrapper = shallow(< Player name="Player 1" onUpdateScore={updateScore} isGameOver={false} />);
   });
 
   it("should render correctly", () => {
@@ -23,5 +23,11 @@ describe(("<Player/> component with props"), () => {
     wrapper.find("button").simulate('click');
     expect(updateScore).toHaveBeenCalled();
     expect(updateScore).toHaveBeenCalledTimes(1);
+  });
+
+  it("should have one heading and no button on gameover", () => {
+    wrapper = shallow(< Player name="Player 1" onUpdateScore={updateScore} isGameOver={true} />);
+    expect(wrapper.find("h5").text()).toEqual("Player 1");
+    expect(wrapper.find("button").length).toBe(0);
   });
 });
