@@ -18,7 +18,7 @@ export default class Scorer extends React.Component {
     }
 
     calculateScore = () => {
-        const { player1Score } = this.props;
+        const { player1Score, player2Score } = this.props;
 
         if (this.isBothScoredEqual()) {
             if (player1Score === Constants.FORTY)
@@ -28,6 +28,8 @@ export default class Scorer extends React.Component {
         }
         if (this.isBothScoredWithinForty())
             return this.getTennisScore();
+        if (player1Score - player2Score > 1)
+            return Constants.PLAYER1_WIN;
     }
 
     getTennisScoreWhenBothScoredEqual = () => {
