@@ -7,5 +7,6 @@ export const Constants = {
     TENNIS_SCORE: ["Love", "Fifteen", "Thirty", "Forty"],
     COMMA: ",",
     FORTY: 3,
+    ALL: " all",
     SCORER_HEADER: "Score"
 };
