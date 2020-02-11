@@ -26,6 +26,14 @@ export default class TennisGame extends React.Component {
         }));
     }
 
+    resetGame = () => {
+        this.setState({
+            player1Score: 0,
+            player2Score: 0,
+            isGameOver: false
+        });
+    }
+
     render() {
         return (
             <div>
@@ -36,6 +44,7 @@ export default class TennisGame extends React.Component {
                     <Player name={Constants.PLAYER2_NAME} onUpdateScore={this.incrementScore} isGameOver={this.state.isGameOver} />
                 </div>
                 <Scorer player1Score={this.state.player1Score} player2Score={this.state.player2Score} onGameOver={this.notifyGameOver} />
+                <br /><button onClick={this.resetGame}>{Constants.RESET_BUTTON_TEXT}</button>
             </div>);
     }
 }

@@ -11,5 +11,6 @@ export const Constants = {
     DEUCE: "Deuce",
     WIN: " wins",
     ADVANTAGE: "Advantage ",
+    RESET_BUTTON_TEXT: "Reset Game",
     SCORER_HEADER: "Score"
 };
