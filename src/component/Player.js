@@ -8,13 +8,14 @@ export default class Player extends React.Component {
     }
 
     render() {
-        if (!this.props.isGameOver)
+        if (!this.props.isGameOver) {
             return (
                 <div>
                     <h5>{this.props.name}</h5>
                     <button onClick={this.onUpdateScore} >{Constants.PLAYER_BUTTON_TEXT}</button>
                 </div>
             );
+        }
         return (<h5>{this.props.name}</h5>);
     }
 }

@@ -9,8 +9,9 @@ export default class Scorer extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.isPropsChanged(prevProps))
+        if (this.isPropsChanged(prevProps)) {
             this.setState({ scoreText: this.calculateScore() });
+        }
     }
 
     isPropsChanged = prevProps => {
@@ -19,14 +20,17 @@ export default class Scorer extends React.Component {
 
     calculateScore = () => {
         if (this.isBothScoredEqual()) {
-            if (this.isDeuce())
+            if (this.isDeuce()) {
                 return Constants.DEUCE;
+            }
             return this.getTennisScoreWhenBothScoredEqual();
         }
-        if (this.isBothScoredWithinForty())
+        if (this.isBothScoredWithinForty()) {
             return this.getTennisScore();
-        if (this.hasWinner())
+        }
+        if (this.hasWinner()) {
             return this.getWinnerScore();
+        }
         return this.getAdvantageScore();
     }
 
