@@ -9,12 +9,12 @@ export default class Scorer extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.isPropsChanged(prevProps)) {
+        if (this.isPlayerScoreChanged(prevProps)) {
             this.setState({ scoreText: this.calculateScore() });
         }
     }
 
-    isPropsChanged = prevProps => {
+    isPlayerScoreChanged = prevProps => {
         return prevProps.player1Score !== this.props.player1Score || prevProps.player2Score !== this.props.player2Score;
     }
 
@@ -23,12 +23,13 @@ export default class Scorer extends React.Component {
             if (this.isDeuce()) {
                 return Constants.DEUCE;
             }
-            return this.getTennisScoreWhenBothScoredEqual();
+            return this.getScoreOnEqual();
         }
         if (this.isBothScoredWithinForty()) {
-            return this.getTennisScore();
+            return this.getScore();
         }
         if (this.hasWinner()) {
+            this.props.onGameOver();
             return this.getWinnerScore();
         }
         return this.getAdvantageScore();
@@ -47,7 +48,6 @@ export default class Scorer extends React.Component {
     }
 
     getWinnerScore = () => {
-        this.props.onGameOver();
         return this.getPlayerWithHighestScore() + Constants.WIN;
     }
 
@@ -55,7 +55,7 @@ export default class Scorer extends React.Component {
         return this.props.player1Score > this.props.player2Score ? Constants.PLAYER1_NAME : Constants.PLAYER2_NAME;
     }
 
-    getTennisScoreWhenBothScoredEqual = () => {
+    getScoreOnEqual = () => {
         return Constants.TENNIS_SCORE[this.props.player1Score] + Constants.ALL;
     }
 
@@ -67,7 +67,7 @@ export default class Scorer extends React.Component {
         return this.props.player1Score <= Constants.FORTY && this.props.player2Score <= Constants.FORTY;
     }
 
-    getTennisScore = () => {
+    getScore = () => {
         return Constants.TENNIS_SCORE[this.props.player1Score] +
             Constants.COMMA + Constants.TENNIS_SCORE[this.props.player2Score];
     }
